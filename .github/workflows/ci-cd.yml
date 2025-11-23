@@ -26,7 +26,7 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
         with:
-          host-url: ${{ secrets.SONAR_HOST }}
+          host-url: ${{ secrets.SONAR_TOKEN }}
           token: ${{ secrets.SONAR_SECRET }}
 
      # - name: Login to ECR
