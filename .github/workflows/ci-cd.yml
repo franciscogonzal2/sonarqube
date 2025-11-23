@@ -1,0 +1,42 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-analyze-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v2
+        with:
+          host-url: ${{ secrets.SONAR_HOST }}
+          token: ${{ secrets.SONAR_SECRET }}
+
+     # - name: Login to ECR
+      #  uses: aws-actions/amazon-ecr-login@v2
+
+    #  - name: Build Docker image
+     #   run: docker build -t mi-api:latest .
+
+     # - name: Tag image
+     #   run: docker tag mi-api:latest ${{ secrets.ECR_REPOSITORY }}:latest
+
+      #- name: Push to ECR
+       # run: docker push ${{ secrets.ECR_REPOSITORY }}:latest

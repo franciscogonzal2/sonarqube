@@ -1,0 +1,88 @@
+# ============================
+# Node
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+
+
+# ============================
+# Logs
+# ============================
+logs/
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+
+# ============================
+# Coverage
+# ============================
+coverage/
+lcov-report/
+
+
+# ============================
+# Build / Dist
+# ============================
+dist/
+build/
+
+
+# ============================
+# OS files
+# ============================
+.DS_Store
+Thumbs.db
+
+
+# ============================
+# IDE / Editors
+# ============================
+.vscode/
+.idea/
+*.swp
+
+
+# ============================
+# Docker
+# ============================
+docker-compose.override.yml
+.dockerignore
+tmp/
+*.bak
+
+
+# ============================
+# SonarQube
+# ============================
+.scannerwork/
+
+
+# ============================
+# GitHub Actions
+# ============================
+# Nada especial aquí, pero puedes ignorar archivos locales
+.github/*.lock
+
+
+# ============================
+# Tests
+# ============================
+test-results/
+*.test.js.snap
+
+
+# ============================
+# Others
+# ============================
+*.tgz
+*.zip
