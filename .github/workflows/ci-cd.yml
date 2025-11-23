@@ -22,12 +22,13 @@ jobs:
 
       - name: Run tests
         run: echo "no tests"
-
+ #     - name: Test ngrok reachability
+#        run: curl -I https://xxxxxx.ngrok.io
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
         with:
-          host-url: ${{ secrets.SONAR_TOKEN }}
-          token: ${{ secrets.SONAR_SECRET }}
+          host-url: ${{ secrets.SONAR_HOST }}
+          token: ${{ secrets.SONAR_TOKEN }}
 
      # - name: Login to ECR
       #  uses: aws-actions/amazon-ecr-login@v2
